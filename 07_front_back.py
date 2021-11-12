@@ -10,9 +10,30 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+# da pra colocar um def dentro de outro? como passar as variavels pro interno ja que nao tem self?
+
 def front_back(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    if len(a) % 2 != 0:
+        positionA = int(len(a) / 2) + 1
+        AparteA = a[:positionA]
+        AparteB = a[positionA:]
+    else:
+        positionA = int(len(a) / 2)
+        AparteA = a[:positionA]
+        AparteB = a[positionA:]
+
+    if len(b) % 2 != 0:
+        positionB = int(len(b) / 2) + 1
+        BparteA = b[:positionB]
+        BparteB = b[positionB:]
+    else:
+        positionB = int(len(b) / 2)
+        BparteA = b[:positionB]
+        BparteB = b[positionB:]
+
+    return AparteA+BparteA+AparteB+BparteB
+
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

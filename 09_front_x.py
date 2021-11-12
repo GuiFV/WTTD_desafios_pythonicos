@@ -12,8 +12,22 @@ antes de combina-las.
 """
 
 def front_x(words):
-    # +++ SUA SOLUÇÃO +++
-    return
+    orderX = []
+    orderN = []
+
+    for word in words:
+        if word[0] == "x":
+            orderX.append(word)
+            orderX.sort()
+
+        else:
+            orderN.append(word)
+            orderN.sort()
+
+    for N in orderN:
+        orderX.append(N)
+
+    return orderX
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
