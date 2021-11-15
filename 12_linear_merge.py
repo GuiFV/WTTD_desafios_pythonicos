@@ -11,11 +11,31 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 
 def linear_merge(list1, list2):
     finallist = []
-    ia = 0
-    ib = 0
-    for ia, na in enumerate(list1):
-        if ia
+    if list1[-1] > list2[-1]:
+        biglist = list1
+        smalllist = list2
+    else:
+        biglist = list2
+        smalllist = list1
+
+    smalllist.append("zzz")
+
+    for i in range(len(biglist)):
+        if i == None:
+            break
+        elif biglist[i] < smalllist[i]:
+            finallist.append(biglist[i])
+            finallist.append(smalllist[i])
+        else:
+            finallist.append(smalllist[i])
+            finallist.append(biglist[i])
+
+    finallist.pop()
+
     return finallist
+
+
+
 # def linear_merge(list1, list2):
     # if list1[-1] > list2[-1]:
     #     biglist = list1
