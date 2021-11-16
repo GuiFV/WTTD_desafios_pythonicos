@@ -53,6 +53,35 @@ e conferindo cada etapa do seu progresso.
 
 import sys
 
+def print_words(file1):
+    all_words = []
+    handle = open(file1, 'r')
+    for i in handle:
+        lo = i.lower()
+        pure = lo.strip("\n ' '")
+        item = pure.split()
+        #print(item)
+        for ii in item:
+            all_words.append(ii)
+
+    the_words = []
+
+    for individual_word in all_words:
+        if individual_word in the_words:
+            continue
+        else:
+            the_words.append(individual_word)
+    the_words.sort()
+
+    #print(all_words.count("a"), all_words.count("b"), all_words.count("c"))
+
+    for indexx in range(len(the_words)):
+
+        print(the_words[indexx], all_words.count(the_words[indexx]))
+
+    handle.close()
+
+    #print(count_words)
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
